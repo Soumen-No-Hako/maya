@@ -1,0 +1,5 @@
+package appComponent
+
+import (
+    "cgo"
+)
