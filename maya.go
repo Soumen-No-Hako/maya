@@ -27,6 +27,7 @@ func main(){
         //Initialise buffers and other things
         //fmt.Println("Press keys to view input")
 	fmt.Printf(mayaEvent.TriggerClearScreen())
+        mayaEvent.TriggerHome()
         buffer := make([]byte, 32)
         for {
                 // Read raw input directly from Standard Input
@@ -53,6 +54,7 @@ func main(){
                     case signals.DEL_INPUT:         mayaEvent.TriggerDel()
                     case signals.HOME_INPUT:        mayaEvent.TriggerHome()
                     case signals.END_INPUT:         mayaEvent.TriggerEnd()
+                    // Add additional conditions for backspace, enter etc
                     default:                        mayaEvent.TriggerCharacterInsert(inp)
                 }
                 /*if len(inp)==1 {
